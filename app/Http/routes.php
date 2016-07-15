@@ -21,22 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('register', function(){
-    return view('register');
-});
-
-use Illuminate\Http\Request;
-
-Route::post('register', function(Request $request){
-
-    $validator = Validator::make($request->all(),array(
-        'first_name' => 'required|min:2|alpha',
-        'last_name'  => 'required|alpha',
-        'email'      => 'required|email',
-
-    ));
-
-});
+// Routes realted to student
+Route::get('register', 'StudentController@viewForm');
+Route::post('register', 'StudentController@createStudent' );
 
 
 
