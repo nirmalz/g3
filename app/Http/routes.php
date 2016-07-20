@@ -22,8 +22,23 @@ Route::get('/', function () {
 });
 
 // Routes realted to student
-Route::get('register', 'StudentController@viewForm');
-Route::post('register', 'StudentController@createStudent' );
+//Route::get('register', 'StudentController@viewForm');
+//Route::post('register', 'StudentController@createStudent' );
+
+/*Routes related to template example*/
+//Route::get('home', function(){
+//    return view('home');
+//});
+//
+//Route::get('contact', function(){
+//    return view('contact');
+//});
+//
+//Route::get('faq', function(){
+//    return view('faq');
+//});
 
 
+Route::auth();
 
+Route::get('/home', 'HomeController@index');
